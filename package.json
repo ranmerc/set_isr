@@ -1,5 +1,5 @@
 {
-  "name": "set_ssr",
+  "name": "set_isr",
   "version": "0.1.0",
   "private": true,
   "scripts": {
