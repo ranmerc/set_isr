@@ -37,7 +37,7 @@ const eventMap = (event) => {
   };
 };
 
-export async function getServerSideProps() {
+export async function getStaticProps() {
   try {
     const events = await getEventValues();
 
@@ -58,6 +58,7 @@ export async function getServerSideProps() {
         upcomingEvents,
         pastEvents,
       },
+      revalidate: 20,
     };
   } catch (e) {
     console.log(e.message);
@@ -67,6 +68,7 @@ export async function getServerSideProps() {
         upcomingEvents: [],
         pastEvents: [],
       },
+      revalidate: 20,
     };
   }
 }
